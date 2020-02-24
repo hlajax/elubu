@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @recette.titre %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recette.description %>
+</p>
+
+<ul>
+  <%@recette.ingredients.each do |ingredient| %>
+  	<li><%=ingredient.titre %></li>
+  <% end %>
+</ul>
+
+<ul>
+  <%@recette.instructions.each do |instruction| %>
+  	<li><%=instruction.etape %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Modifier', edit_recette_path(@recette) %> |
+<%= link_to 'Retour', recettes_path %>
